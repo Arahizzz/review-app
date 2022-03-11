@@ -11,7 +11,8 @@
   "dependencies": {
     "@tauri-apps/api": "^1.0.0-rc.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "review-poster": "file:review-poster"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.0.0-rc.7",
