@@ -57,9 +57,20 @@
           {
             "name": "bin/review-poster",
             "sidecar": true,
-            "cmd": "bin/review-poster"
+            "cmd": "bin/review-poster",
+            "args": true
           }
         ]
+      },
+      "fs": {
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "createDir": true,
+        "scope": ["$CACHE/review-app/*"]
+      },
+      "path": {
+        "all": true
       }
     },
     "windows": [
