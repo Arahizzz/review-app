@@ -1,0 +1,3 @@
+[submodule "review-poster"]
+	path = review-poster
+	url = git@github.com:Arahizzz/review-poster.git
