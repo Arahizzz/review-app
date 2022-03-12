@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <Box height='100vh' m={10}>
+      <Box m={10}>
         <Container maxWidth='xl'>
           <Configurator />
         </Container>

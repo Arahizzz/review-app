@@ -7,7 +7,7 @@ const MultiLineSpan = styled.span`
 white-space: pre-line
 `
 
-export default function ReviewRow({ value, onChange }: { value: string, onChange: (arg0: string) => void}) {
+export default function ReviewRow({ value, onChange }: { value: string, onChange: (arg0: string) => void }) {
     const [isEdit, setEdit] = useState(!value);
     const [state, setState] = useState(value);
 
@@ -30,7 +30,10 @@ export default function ReviewRow({ value, onChange }: { value: string, onChange
             : <IconButton onClick={startEdit}><Edit /></IconButton>}
         </TableCell>
         <TableCell>{isEdit ?
-            <TextareaAutosize autoFocus={true} value={state} onChange={(e) => setState(e.currentTarget.value)}></TextareaAutosize>
+            <TextareaAutosize 
+            autoFocus={true} value={state} onChange={(e) => setState(e.currentTarget.value)}
+            style={{width: '90%'}} minRows={3}
+            ></TextareaAutosize>
             : <MultiLineSpan>{value}</MultiLineSpan>}
         </TableCell>
     </TableRow>

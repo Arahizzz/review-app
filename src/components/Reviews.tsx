@@ -17,6 +17,7 @@ export default function Reviews({ reviews, setReviews, addReview }: Props) {
         if (s) {
             newArr[i] = s;
         } else {
+            //If empty string delete row
             newArr.splice(i, 1);
         }
         setReviews(newArr);
@@ -31,10 +32,10 @@ export default function Reviews({ reviews, setReviews, addReview }: Props) {
                 </IconButton>
             </Avatar>
         </Box>
-        <TableContainer>
-            <Table>
+        <TableContainer style={{ maxHeight: '70vh' }}>
+            <Table stickyHeader>
                 <TableHead>
-                    <TableRow><TableCell>Edit</TableCell><TableCell>Review</TableCell></TableRow>
+                    <TableRow><TableCell style={{ width: 100 }}>Edit</TableCell><TableCell>Review</TableCell></TableRow>
                 </TableHead>
                 <TableBody>
                     {reviews.map((r, index) => <ReviewRow key={r} value={r} onChange={(s) => editRow(s, index)} />)}
