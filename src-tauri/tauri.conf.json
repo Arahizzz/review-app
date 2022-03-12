@@ -1,6 +1,6 @@
 {
   "package": {
-    "productName": "review-app",
+    "productName": "Review Poster",
     "version": "0.1.0"
   },
   "build": {
