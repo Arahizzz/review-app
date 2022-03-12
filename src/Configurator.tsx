@@ -27,12 +27,14 @@ export default function Configurator() {
 
     const importConfig = async () => {
         const config = await loadConfig();
-        setType(config.type);
-        setSearch(config.searchQuery);
-        setLat(config.coords.lat);
-        setLon(config.coords.long);
-        setZoom(config.coords.zoom);
-        setReviews(config.reviews);
+        if (config){
+            setType(config.type);
+            setSearch(config.searchQuery);
+            setLat(config.coords.lat);
+            setLon(config.coords.long);
+            setZoom(config.coords.zoom);
+            setReviews(config.reviews);
+        }
     };
 
     const exportConfig = async () => {

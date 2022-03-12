@@ -67,7 +67,7 @@
         "writeFile": true,
         "readDir": true,
         "createDir": true,
-        "scope": ["$CACHE/review-app/*"]
+        "scope": ["$CACHE/*"]
       },
       "path": {
         "all": true
