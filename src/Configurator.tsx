@@ -5,6 +5,7 @@ import { RunnerType } from 'review-poster/models/runnerType';
 import Reviews from './components/Reviews';
 import { loadConfig, saveConfig } from './services/configService';
 import { runPlaywright } from './services/playwright';
+import { collectStatisticsEvent } from "./services/firebase";
 
 export default function Configurator() {
     const [type, setType] = useState(RunnerType.GoogleMaps);
@@ -16,6 +17,7 @@ export default function Configurator() {
 
     const runConfig = () => {
         if (lat && long && zoom) {
+            collectStatisticsEvent("review_poster_launch")
             const config = new Config({ lat, long, zoom }, search, reviews, type);
             runPlaywright(config);
         }

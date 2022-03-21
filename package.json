@@ -16,6 +16,7 @@
     "@mui/material": "^5.5.0",
     "@mui/styled-engine-sc": "^5.4.2",
     "@tauri-apps/api": "^1.0.0-rc.2",
+    "firebase": "^9.6.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "review-poster": "file:review-poster",

@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import logo from './logo.svg'
-import { runPlaywright } from './services/playwright'
 import Configurator from './Configurator'
 import { Container } from '@mui/material'
 import { Box } from '@mui/system'
