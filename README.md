@@ -4,9 +4,7 @@
 1. Setup [Tauri](https://tauri.studio/docs/getting-started/prerequisites)
 2. Clone repository 
 3. Init submodules (`git submodule init`)
-4. Globally install [pkg](https://github.com/vercel/pkg) tool `npm install -g pkg`.
-5. Install npm packages in root folder and review-poster folder
-6. Build review-poster binary with `scripts/build-review-poster.sh`
+4. Install packages and build review-poster binary with `scripts/build-review-poster.sh` (Linux and Mac) or `scripts/build-review-poster.ps1` (Windows)
 
 ## Launch Development App
 `npm run tauri dev`
