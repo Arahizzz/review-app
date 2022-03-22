@@ -22,7 +22,9 @@
         "icons/icon.ico"
       ],
       "resources": [],
-      "externalBin": ["bin/review-poster"],
+      "externalBin": [
+        "bin/review-poster"
+      ],
       "copyright": "",
       "category": "DeveloperTool",
       "shortDescription": "",
@@ -47,7 +49,12 @@
       }
     },
     "updater": {
-      "active": false
+      "active": true,
+      "endpoints": [
+        "https://gist.github.com/Arahizzz/829838cb9fedd4aa81d34174ebc20617/raw"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQzOEZBN0UxQzcxRjgyNkQKUldSdGdoL0g0YWVQUTlHM09ncm81MDFzV0VQWStvUHBkbmhRZjVUbzhNRGgzdmdDaVpyUitUeEsK"
     },
     "allowlist": {
       "all": true,
@@ -67,7 +74,9 @@
         "writeFile": true,
         "readDir": true,
         "createDir": true,
-        "scope": ["$CACHE/*"]
+        "scope": [
+          "$CACHE/*"
+        ]
       },
       "path": {
         "all": true
