@@ -31,13 +31,11 @@ jobs:
     - name: install app dependencies and build it (ubuntu and mac)
       if: matrix.platform == 'ubuntu-latest' || matrix.platform == 'macos-latest'
       run: |
-        npm i
         scripts/build-review-poster.sh
         npm run build
     - name: install app dependencies and build it (windows)
       if: matrix.platform == 'windows-latest'
       run: |
-        npm i
         scripts/build-review-poster.ps1
         npm run build
     - uses: tauri-apps/tauri-action@v0
