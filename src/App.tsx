@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Configurator from './Configurator'
 import { Container } from '@mui/material'
 import { Box } from '@mui/system'
