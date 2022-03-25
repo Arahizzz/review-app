@@ -1,5 +1,5 @@
 import { IconButton, TableCell, TableRow, TextareaAutosize } from "@mui/material";
-import { Done, Edit, NotInterested } from '@mui/icons-material'
+import { Delete, Done, Edit, NotInterested } from '@mui/icons-material'
 import { useState } from "react";
 import styled from "@emotion/styled";
 
@@ -7,7 +7,7 @@ const MultiLineSpan = styled.span`
 white-space: pre-line
 `
 
-export default function ReviewRow({ value, onChange }: { value: string, onChange: (arg0: string) => void }) {
+export default function ReviewRow({ value, onChangeReview, onDeleteReview }: { value: string, onChangeReview: (arg0: string) => void, onDeleteReview: () => void }) {
     const [isEdit, setEdit] = useState(!value);
     const [state, setState] = useState(value);
 
@@ -18,19 +18,20 @@ export default function ReviewRow({ value, onChange }: { value: string, onChange
     };
     const saveEdit = () => {
         setEdit(false);
-        onChange(state);
+        onChangeReview(state);
     };
 
     return <TableRow>
-        <TableCell style={{ width: 100 }}> {isEdit
+        <TableCell style={{ width: 150 }}> {isEdit
             ? <div>
                 <IconButton onClick={saveEdit}><Done /></IconButton>
+                <IconButton onClick={onDeleteReview}><Delete /></IconButton>
                 <IconButton onClick={cancelEdit}><NotInterested /></IconButton>
             </div>
             : <IconButton onClick={startEdit}><Edit /></IconButton>}
         </TableCell>
         <TableCell>{isEdit ?
-            <TextareaAutosize 
+            <TextareaAutosize
             autoFocus={true} value={state} onChange={(e) => setState(e.currentTarget.value)}
             style={{width: '90%'}} minRows={3}
             ></TextareaAutosize>

@@ -4,11 +4,10 @@ import { Container } from '@mui/material'
 import { Box } from '@mui/system'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <Box m={10}>
+      <Box m={5}>
         <Container maxWidth='xl'>
           <Configurator />
         </Container>
