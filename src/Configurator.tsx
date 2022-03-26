@@ -4,7 +4,7 @@ import {
     FormControl,
     FormControlLabel,
     Grid, Input,
-    InputLabel
+    InputLabel, Typography
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Config, QueryParameters, Reviews } from 'review-poster/models/config'
@@ -33,14 +33,21 @@ export default function Configurator() {
         fetch("https://gist.githubusercontent.com/roman20003821/e7228dd859bcc7896bfb3bce14eabd04/raw/21fb0d18ab7571cec46dc425491f833f3ee3f934/reviewPosterConfig.json")
             .then(res => res.json())
             .then(remoteConfig => {
+                const shuffle = (array: any[]) => {
+                    array.sort(() => Math.random() - 0.5)
+                    return array
+                }
+
                 const searchQueries = remoteConfig.searchQueries
                 const getRandomSearchQuery = () => searchQueries[Math.floor(Math.random() * searchQueries.length)]
+
                 const getRandomInt = (min: number, max: number) => {
                     min = Math.ceil(min);
                     max = Math.floor(max);
                     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
                 }
-                setQueryParameters(remoteConfig.citiesCoords.map((cityCoords: any) => {
+
+                setQueryParameters(shuffle(remoteConfig.citiesCoords).map((cityCoords: any) => {
                     return new class implements QueryParameters {
                         searchQuery: string = getRandomSearchQuery()
                         lat: number = cityCoords.lat
@@ -127,6 +134,10 @@ export default function Configurator() {
         <Grid item xs={4} lg={4}>
             <Button variant='contained' color="success" onClick={() => runConfig()} fullWidth style={{marginTop: 25}}>Start
                 posting reviews on Google Maps</Button>
+            <Typography variant='body2' fontWeight="light" textAlign="center" style={{marginTop: 5}}>Incognito window will be opened, login
+                with
+                your credentials <br/>and wait till program completes
+                (review poster will control your browser)</Typography>
         </Grid>
     </Grid>
 }
