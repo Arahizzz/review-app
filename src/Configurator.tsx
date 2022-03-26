@@ -1,10 +1,9 @@
 import {
     Button,
-    Checkbox,
     FormControl,
     FormControlLabel,
     Grid, Input,
-    InputLabel, Typography
+    InputLabel, Switch, Typography
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Config, QueryParameters, Reviews } from 'review-poster/models/config'
@@ -95,6 +94,14 @@ export default function Configurator() {
     return <Grid container direction="column" alignItems="center" justifyContent="center">
         <Grid item xs={8} lg={8}>
             <ReviewsTable reviews={reviews} setReviews={setReviews} addReview={addReview}></ReviewsTable>
+            <FormControlLabel control={
+                <Switch
+                    name="Advanced mode"
+                    value="Advanced mode"
+                    checked={advancedMode}
+                    onChange={(e) => setAdvancedMode(e.target.checked)}
+                />
+            } label="Advanced mode" style={{marginTop: 5, marginLeft: 25}}/>
             {advancedMode && <Grid container justifyContent="space-around" style={{marginTop:25}}>
                 <Grid item xs={12} lg={5}>
                     <FormControl fullWidth style={{margin:10}}>
@@ -122,14 +129,6 @@ export default function Configurator() {
                     </FormControl>
                 </Grid>
             </Grid>}
-            <FormControlLabel control={
-                <Checkbox
-                    name="Advanced mode"
-                    value="Advanced mode"
-                    checked={advancedMode}
-                    onChange={(e) => setAdvancedMode(e.target.checked)}
-                />
-            } label="Advanced mode" style={{marginTop: 5, marginLeft: 25}}/>
         </Grid>
         <Grid item xs={4} lg={4}>
             <Button variant='contained' color="success" onClick={() => runConfig()} fullWidth style={{marginTop: 25}}>Start
