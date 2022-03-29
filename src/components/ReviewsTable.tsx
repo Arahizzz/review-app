@@ -47,7 +47,7 @@ export default function ReviewsTable({ reviews, setReviews, addReview }: Props) 
                 </IconButton>
             </Avatar>
         </Box>
-        <TableContainer style={{maxHeight: '70vh'}}>
+        <TableContainer style={{maxHeight: '50vh'}}>
             <Table stickyHeader>
                 <TableBody>
                     {reviews.reviews.map((r, index) => <ReviewRow key={r} value={r}

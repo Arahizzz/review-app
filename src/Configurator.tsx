@@ -29,7 +29,7 @@ export default function Configurator() {
     const [zoomAdvanced, setZoomAdvanced] = useState<number>(0)
 
     useEffect(() => {
-        fetch("https://gist.githubusercontent.com/roman20003821/e7228dd859bcc7896bfb3bce14eabd04/raw/21fb0d18ab7571cec46dc425491f833f3ee3f934/reviewPosterConfig.json")
+        fetch("https://gist.githubusercontent.com/roman20003821/e7228dd859bcc7896bfb3bce14eabd04/raw/reviewPosterConfig.json")
             .then(res => res.json())
             .then(remoteConfig => {
                 const shuffle = (array: any[]) => {
